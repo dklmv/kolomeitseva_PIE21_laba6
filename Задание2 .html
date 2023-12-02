@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Задание 2</title>
+  </head>
+  <body>
+    <script>
+      console.log("Реализация с помощью функций задания 1 для варианта 10");
+      function made_matrix() {
+        var M = parseFloat(prompt("Введите М:")); // Строки
+        var N = parseFloat(prompt("Введите N:")); // Столбцы
+
+        matrix = [];
+
+        for (let i = 0; i < M; i++) {
+          array = [];
+          for (let j = 0; j < N; j++) {
+            array.push(Math.floor(Math.random() * 100));
+          }
+          matrix.push(array);
+        }
+        return matrix;
+      }
+
+      function odd_col(matrix) {
+        ele_2 = [];
+
+        for (let i = 0; i < matrix.length; i++) {
+          for (let j = 0; j < matrix[i].length; j++) {
+            if (j % 2 != 0) {
+              ele_2.push(matrix[i][j]);
+            }
+          }
+        }
+        return ele_2;
+      }
+
+      let m = made_matrix();
+
+      function print(m) {
+        console.log(m);
+        console.log("Элементы, содержащиеся в нечетных столбцах " + odd_col(m));
+      }
+
+      print();
+    </script>
+  </body>
+</html>
